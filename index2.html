@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">    
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <title>Flight Matrix Dashboard</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link href="css/lib/amchart/export.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="header-fix fix-sidebar">
+    
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index2.html">
+                        <!-- Logo icon -->
+                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- Messages -->
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Comment -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Notifications</div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="fa fa-plane m-r-10 f-s-40" title="Flight Departure"></i>
+                                                <div class="notification-content">
+                                                    <h5>Flight Departure</h5>
+                                                    <span class="notification-desc">Flight AA123 has departed from New York to London.</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="fa fa-plane m-r-10 f-s-40" title="Flight Arrival"></i>
+                                                <div class="notification-content">
+                                                    <h5>Flight Arrival</h5>
+                                                    <span class="notification-desc">Flight BA456 has arrived at Paris Charles de Gaulle Airport.</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="fa fa-clock m-r-10 f-s-40" title="Delayed Flight"></i>
+                                                <div class="notification-content">
+                                                    <h5>Delayed Flight</h5>
+                                                    <span class="notification-desc">Flight CX789 is delayed due to adverse weather conditions.</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="fa fa-users m-r-10 f-s-40" title="Boarding"></i>
+                                                <div class="notification-content">
+                                                    <h5>Boarding</h5>
+                                                    <span class="notification-desc">Boarding for Flight DL101 is now open at Gate 10.</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> Check all notifications <i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Comment -->
+                        
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"> Profile</a></li>
+                                    <li><a href="#"> Balance</a></li>
+                                    <li><a href="#"> Inbox</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"> Setting</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label"></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-primary pull-right">1</span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+
+                                <li><a href="index2.html">Flight Matrix Dashboard </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">Features</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="table-datatable.html">Data Tables</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Dashboard</h3> </div>
+                    
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <div class="card-body">
+                <div class="basic-form">
+                    <form>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12 center">Enter the<code>Plane </code> Code</p>
+                            <input type="text" class="form-control input-default " placeholder="Input Default">
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-plane-departure f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>12</h4>
+                                    <p class="m-b-0">Current Flights</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-exclamation-triangle f-s-40 color-success"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>5</h4>
+                                    <p class="m-b-0">Maintenance Alerts</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-bag f-s-40 color-warning"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>1000 kg</h4>
+                                    <p class="m-b-0">Luggage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-alert f-s-40 color-danger"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>3</h4>
+                                    <p class="m-b-0">System Warnings</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-tachometer-alt f-s-40 color-info"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>480 knots</h4>
+                                    <p class="m-b-0">Avg Airspeed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-gas-pump f-s-40 color-success"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>2500 kg/h</h4>
+                                    <p class="m-b-0">Fuel Consumption</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-arrows-alt-v f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>35000 ft</h4>
+                                    <p class="m-b-0">Altitude</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-tools f-s-40 color-danger"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>Operational</h4>
+                                    <p class="m-b-0">Hydraulics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-signal f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>Operational</h4>
+                                    <p class="m-b-0">Communication</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-clock f-s-40 color-warning"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>1500 hrs</h4>
+                                    <p class="m-b-0">Engine Runtime</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-compress-arrows-alt f-s-40 color-info"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>1.8</h4>
+                                    <p class="m-b-0">EPR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fas fa-thermometer-full f-s-40 color-danger"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>700°C</h4>
+                                    <p class="m-b-0">EGT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="row">
+
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Statistics</h4>
+                                <div id="chartdiv3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Flight Map</h4>
+                                <div id="chartMap"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card text-center bg-primary">
+                            <div class="m-t-10">
+                                <p class="color-white">Current Flights</p>
+                                <h2 class="color-white">12</h2>
+                            </div>
+                            <ul class="widget-line-list m-b-15">
+                                <li class="border-right">10 <br><span class="color-white"><i class="fas fa-plane-departure m-r-5"></i> On Schedule</span></li>
+                                <li>2 <br><span class="color-white f-s-14"><i class="fas fa-plane-slash m-r-5"></i> Delayed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center bg-success">
+                            <div class="m-t-10">
+                                <p class="color-white">Engine Status</p>
+                                <h2 class="color-white">Operational</h2>
+                            </div>
+                            <ul class="widget-line-list m-b-15">
+                                <li class="border-right">98% <br><span class="color-white"><i class="fas fa-cogs m-r-5"></i> Running</span></li>
+                                <li>2% <br><span class="color-white f-s-14"><i class="fas fa-exclamation-triangle m-r-5"></i>Maintenance Needed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center bg-danger">
+                            <div class="m-t-10">
+                                <p class="color-white">Fuel Levels</p>
+                                <h2 class="color-white">75%</h2>
+                            </div>
+                            <ul class="widget-line-list m-b-15">
+                                <li class="border-right">75% <br><span class="color-white"><i class="fas fa-tachometer-alt m-r-5"></i> Remaining</span></li>
+                                <li>25% <br><span class="color-white f-s-14"><i class="fas fa-gas-pump m-r-5"></i> Consumed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-title">
+                            <h4>Nav Performance</h4>
+                            <div class="card-title-right-icon">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="updating-chart">1,4,4,5,6,5,4,5,6,3,5,6,5,6,5,9,7,3,5,2</span>
+                        </div>
+                    </div>
+                    <!-- /# card -->
+                </div>
+                <!-- /# column -->
+            </div>
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Engine Temperature Gauge</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="gauge" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Fuel Consuption</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="rainfall" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Pressure Reading</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="b-area" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Sensor Data</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="bs-chart" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>MCDU</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="nb-chart" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>System Health</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="np-Pie" style="height: 370px"></div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Radar Map</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="radar" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Air Cond</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="b-line" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+
+                    <!-- column -->
+                    <div class="col-lg-6">
+                        <div class="card nestable-cart">
+                            <div class="card-title">
+                                <h4>ELEC</h4>
+                                <div class="card-title-right-icon">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sparkline-unix">
+                                <div id="sparkline12" class="text-center"></div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- column -->
+
+                    <!-- column -->
+                     <div class="col-lg-6">
+                        <div class="card nestable-cart sperkline_fourteen_bg">
+                            <div class="card-title">
+                                <h4>HYD FUEL-XFEED</h4>
+                                <div class="card-title-right-icon">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sparkline-unix">
+                                <div id="sparkline14" class="text-center"></div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- column -->
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Navigation Data</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="basic-Pie" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Navigation Data-2</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="doughnut" style="height: 370px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Recent Flight Orders </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Flight</th>
+                                                <th>Destination</th>
+                                                <th>Passengers</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img class="w-35" src="images/avatar/1.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Flight 123</td>
+                                                <td><span>Airbus A320</span></td>
+                                                <td><span>150 passengers</span></td>
+                                                <td><span class="badge badge-success">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img class="w-35" src="images/avatar/1.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Flight 456</td>
+                                                <td><span>Boeing 737</span></td>
+                                                <td><span>200 passengers</span></td>
+                                                <td><span class="badge badge-warning">In Progress</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img class="w-35" src="images/avatar/1.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Flight 789</td>
+                                                <td><span>Airbus A350</span></td>
+                                                <td><span>180 passengers</span></td>
+                                                <td><span class="badge badge-success">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img class="w-35" src="images/avatar/1.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Flight 101</td>
+                                                <td><span>Boeing 777</span></td>
+                                                <td><span>250 passengers</span></td>
+                                                <td><span class="badge badge-warning">In Progress</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img class="w-35" src="images/avatar/1.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Flight 202</td>
+                                                <td><span>Airbus A380</span></td>
+                                                <td><span>300 passengers</span></td>
+                                                <td><span class="badge badge-warning">In Progress</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img class="w-35" src="images/avatar/1.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Flight 303</td>
+                                                <td><span>Boeing 787</span></td>
+                                                <td><span>200 passengers</span></td>
+                                                <td><span class="badge badge-success">Completed</span></td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card nestable-cart">
+                            <div class="card-title">
+                                <h4>Store Location</h4>
+
+                            </div>
+                            <div class="datamap">
+                                <div id="world-datamap"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 responsive-50">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Flight Events Timeline</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="timeline">
+                                    <li>
+                                        <div class="timeline-badge primary"><i class="fa fa-plane"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Flight AA123 departed from New York to London.</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>10 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge warning"><i class="fa fa-plane"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Flight BA456 landed at Paris Charles de Gaulle Airport.</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>20 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge danger"><i class="fa fa-plane"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Flight CX789 delayed due to adverse weather conditions.</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>30 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge success"><i class="fa fa-plane"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Flight DL101 reached its cruising altitude.</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>15 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <!-- /# card -->
+                    </div>
+
+                    <div class="col-lg-4 responsive-50">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Ticket </h4>
+
+                            </div>
+                            <div class="recent-comment">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="images/avatar/1.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">john doe</h4>
+                                        <p>Flight: AA123</p>
+                                        <p>Seat: 12A</p>
+                                        <p>Status: Confirmed</p>
+                                        <div class="comment-action">
+                                            <div class="badge badge-success">Done</div>
+                                            <span class="m-l-10">
+                                                   <a href="#"><i class="ti-check color-success"></i></a>
+                                                   <a href="#"><i class="ti-close color-danger"></i></a>
+                                                   <a href="#"><i class="fa fa-reply color-primary"></i></a>
+                                               </span>
+                                        </div>
+                                        <p class="comment-date">October 21, 2017</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="images/avatar/2.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Mr. John</h4>
+                                        <p>Flight: AA123</p>
+                                        <p>Seat: 12A</p>
+                                        <p>Status: Confirmed</p>
+                                        <div class="comment-action">
+                                            <div class="badge badge-warning">Pending</div>
+                                            <span class="m-l-10">
+                                                   <a href="#"><i class="ti-check color-success"></i></a>
+                                                   <a href="#"><i class="ti-close color-danger"></i></a>
+                                                   <a href="#"><i class="fa fa-reply color-primary"></i></a>
+                                               </span>
+                                        </div>
+                                        <p class="comment-date">October 21, 2017</p>
+                                    </div>
+                                </div>
+                                <div class="media no-border">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="images/avatar/3.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Mr. John</h4>
+                                        <p>Flight: AA123</p>
+                                        <p>Seat: 12A</p>
+                                        <p>Status: Confirmed</p>
+                                        <div class="comment-action">
+                                            <div class="badge badge-success">Done</div>
+                                            <span class="m-l-10">
+                                                   <a href="#"><i class="ti-check color-success"></i></a>
+                                                   <a href="#"><i class="ti-close color-danger"></i></a>
+                                                   <a href="#"><i class="fa fa-reply color-primary"></i></a>
+                                               </span>
+                                        </div>
+                                        <div class="comment-date">October 21, 2017</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <div class="col-lg-4 responsive-100">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Flight Tasks</h4>
+                            </div>
+                            <div class="todo-list">
+                                <div class="tdl-holder">
+                                    <div class="tdl-content">
+                                        <ul>
+                                            <li class="color-primary">
+                                                <label>
+                                                    <input type="checkbox"><i class="bg-primary"></i><span>Check weather forecast for upcoming flights.</span>
+                                                    <a href='#' class="ti-close"></a>
+                                                </label>
+                                            </li>
+                                            <li class="color-success">
+                                                <label>
+                                                    <input type="checkbox" checked><i class="bg-success"></i><span>Review flight maintenance checklist.</span>
+                                                    <a href='#' class="ti-close"></a>
+                                                </label>
+                                            </li>
+                                            <li class="color-warning">
+                                                <label>
+                                                    <input type="checkbox" checked><i class="bg-warning"></i><span>Coordinate with ground crew for refueling.</span>
+                                                    <a href='#' class="ti-close"></a>
+                                                </label>
+                                            </li>
+                                            <li class="color-danger">
+                                                <label>
+                                                    <input type="checkbox" checked><i class="bg-danger"></i><span>Confirm passenger manifests for upcoming flights.</span>
+                                                    <a href='#' class="ti-close"></a>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" class="tdl-new form-control" placeholder="Add new task">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+            </div>
+                </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer"> Created By <b>Himanshu Parashar</b></footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+   
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="js/lib/echart/echarts.js"></script>
+    <script src="js/lib/echart/echarts-init.js"></script>
+    <script src="js/lib/datamap/d3.min.js"></script>
+    <script src="js/lib/datamap/topojson.js"></script>
+    <script src="js/lib/datamap/datamaps.world.min.js"></script>
+    <script src="js/lib/datamap/datamap-init.js"></script>
+    <script src="js/lib/sparklinechart/jquery.sparkline.min.js"></script>
+    <!-- sparkline init-->
+    <script src="js/lib/sparklinechart/sparkline.init.js"></script>
+    <script src="js/lib/peitychart/jquery.peity.min.js"></script>
+    <!-- scripit init-->
+    <script src="js/lib/peitychart/peitychart.init.js"></script>
+	
+	<!-- Amchart -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="js/lib/chart-amchart/serial.js"></script>
+    <script src="js/lib/chart-amchart/export.min.js"></script>
+    <script src="js/lib/chart-amchart/light.js"></script>
+    <script src="js/lib/chart-amchart/ammap.js"></script>
+    <script src="js/lib/chart-amchart/worldLow.js"></script>
+    <script src="js/lib/chart-amchart/pie.js"></script>
+    <script src="js/lib/chart-amchart/amstock.js"></script>
+    <script src="js/lib/chart-amchart/amchart-init.js"></script>
+
+
+    <script src="js/lib/weather/jquery.simpleWeather.min.js"></script>
+    <script src="js/lib/weather/weather-init.js"></script>
+    <script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
+    <script src="js/scripts.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    
+    
+
+</body>
+
+</html>
